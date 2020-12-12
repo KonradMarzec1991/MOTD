@@ -3,7 +3,9 @@ Module with models
 """
 import random
 from datetime import datetime
+
 import requests
+from rest_framework import status
 
 
 class RandomQuote:
@@ -43,7 +45,7 @@ class RandomQuote:
         if impossible, gets quote from backup tuple
         """
         response = requests.get(self.get_url)
-        if response.status_code == 200:
+        if response.status_code == status.HTTP_200_OK:
             text = response.json()
             quote = text.get('quoteText', None)
             if not quote:

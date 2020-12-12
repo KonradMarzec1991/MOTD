@@ -11,7 +11,13 @@ from .serializers import MessageOfTheDaySerialzier
 
 
 class MessageView(APIView):
+    """
+    Displays Message of the day (MOTD)
 
+    The /etc/motd is a file on Unix-like systems that contains a
+    "message of the day", used to send a common message to all users in a
+    more efficient manner than sending them all an e-mail message.
+    """
     def get(self, request):
         serializer = MessageOfTheDaySerialzier(data=MessageOfTheDay().to_dict())
         serializer.is_valid(raise_exception=True)
