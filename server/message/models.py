@@ -49,8 +49,7 @@ class RandomQuote:
             if not quote:
                 return self.get_backup_quote()
             return quote.strip()
-        else:
-            return self.get_backup_quote()
+        return self.get_backup_quote()
 
     def __str__(self):
         return f'RandomQuote({self.method}, {self.lang}, {self.format})'
@@ -63,9 +62,10 @@ class MessageOfTheDay:
     """
     def __init__(self):
         self.content = RandomQuote().get_quote()
-        self.createdAt = datetime.utcnow()
+        self.created_at = datetime.utcnow()
 
     def to_dict(self):
+        """Returns dict with instance attributes"""
         return self.__dict__
 
     def __str__(self):
