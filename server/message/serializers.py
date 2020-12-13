@@ -8,5 +8,5 @@ class MessageOfTheDaySerialzier(serializers.Serializer):
     """
     Serializes fields of MessageOfTheDay model
     """
-    content = serializers.CharField(max_length=250)
+    content = serializers.CharField(max_length=500)
     created_at = serializers.DateTimeField()
