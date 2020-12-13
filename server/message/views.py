@@ -9,6 +9,7 @@ from rest_framework import status
 from rest_framework.renderers import JSONRenderer, HTMLFormRenderer
 from rest_framework_xml.renderers import XMLRenderer
 from rest_framework_yaml.renderers import YAMLRenderer
+from rest_framework_msgpack.renderers import MessagePackRenderer
 
 from .serializers import MessageOfTheDaySerialzier
 from .utils import get_view_data
@@ -28,16 +29,9 @@ class MessageView(APIView):
     - Plain text
     - XML
     - YAML
+    - MessagePack
     - HTML Form
     """
-    renderer_classes = (
-        JSONRenderer,
-        PlainTextRenderer,
-        XMLRenderer,
-        YAMLRenderer,
-        HTMLFormRenderer
-    )
-
     def get(self, request):
         print(request.META.get('HTTP_ACCEPT'))
         data = get_view_data(request, MessageOfTheDaySerialzier)
