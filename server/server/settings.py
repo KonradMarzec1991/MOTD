@@ -140,6 +140,6 @@ REST_FRAMEWORK = {
         'rest_framework_xml.renderers.XMLRenderer',
         'rest_framework_yaml.renderers.YAMLRenderer',
         'rest_framework_msgpack.renderers.MessagePackRenderer',
-        'message.renderer.PlainTextRenderer'
+        'message.renderers.PlainTextRenderer'
     ]
 }

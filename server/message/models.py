@@ -4,6 +4,7 @@ Module with models
 import random
 from datetime import datetime
 
+import demjson
 import requests
 from rest_framework import status
 
@@ -14,6 +15,7 @@ class RandomQuote:
     (status_code is different than 200), class gets quotes from backup tuple
     """
     RANDOM_QUOTES_URL = 'https://api.forismatic.com/api/1.0/'
+
     BACKUP_QUOTES = (
         "The winds and waves are always on the side of the ablest navigators.",
         "To accomplish great things, we must dream as well as act.",
@@ -46,7 +48,7 @@ class RandomQuote:
         """
         response = requests.get(self.get_url)
         if response.status_code == status.HTTP_200_OK:
-            text = response.json()
+            text = demjson.decode(response.text)
             quote = text.get('quoteText', None)
             if not quote:
                 return self.get_backup_quote()
