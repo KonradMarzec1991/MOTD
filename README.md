@@ -2,8 +2,8 @@
 <hr >
 
 ### Introduction
-Message-of-the-day is simple Django application, which displays message (quote) to user.
-When once displayed message, it will be the same for next 24 hours.
+Message-of-the-day is simple Django REST application, which displays message (quote) to user.
+When once displayed, it will be the same for next 24 hours.
 
 ### Installation
 Please follow below steps:
