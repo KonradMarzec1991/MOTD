@@ -14,7 +14,7 @@ ignore=CVS,urls.py,apps.py
 
 # Add files or directories matching the regex patterns to the blacklist. The
 # regex matches against base names, not paths.
-ignore-patterns=
+ignore-patterns=test_.*?py
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
@@ -141,7 +141,8 @@ disable=print-statement,
         comprehension-escape,
         abstract-method,
         no-self-use,
-        missing-class-docstring
+        missing-class-docstring,
+        too-few-public-methods
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

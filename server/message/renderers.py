@@ -1,3 +1,4 @@
+# pylint: disable=arguments-differ,unused-argument
 """
 Custom renderers module
 """

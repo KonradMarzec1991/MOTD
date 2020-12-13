@@ -27,5 +27,6 @@ class MessageView(APIView):
     - HTML Form
     """
     def get(self, request):
+        """Endpoint for MOTD"""
         data = get_view_data(request, MessageOfTheDaySerialzier)
         return Response(data, status=status.HTTP_200_OK)
