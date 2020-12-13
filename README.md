@@ -7,8 +7,8 @@ When once displayed, it will be the same for next 24 hours.
 
 ### Installation
 Please follow below steps:
-1) git clone `https://github.com/KonradMarzec1991/Message-of-the-day.git`
-2) When being in main folder, `docker-compose up --build`
+1) `git clone https://github.com/KonradMarzec1991/Message-of-the-day.git`
+2) `docker-compose up --build` (in main folder)
 
 ### Usage
 There are 6 content-types user can negotiate:
