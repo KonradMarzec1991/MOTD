@@ -66,7 +66,7 @@ class MessageOfTheDay:
     """
     def __init__(self):
         self.content = RandomQuote().get_quote()
-        self.created_at = datetime.utcnow()
+        self.created_at = datetime.utcnow().replace(microsecond=0)
 
     def to_dict(self):
         """Returns dict with instance attributes"""

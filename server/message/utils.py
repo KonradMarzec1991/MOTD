@@ -28,6 +28,8 @@ def get_view_data(request, serializer_class):
     if cached_ip_value:
         serializer = serializer_class(data=cached_ip_value)
     else:
-        serializer = serializer_class(data=MessageOfTheDay().to_dict())
+        message = MessageOfTheDay().to_dict()
+        cache.set(ip, message)
+        serializer = serializer_class(data=message)
     serializer.is_valid(raise_exception=True)
     return serializer.data
