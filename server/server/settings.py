@@ -40,6 +40,12 @@ INSTALLED_APPS = [
     'rest_framework'
 ]
 
+MY_APPS = [
+    'message'
+]
+
+INSTALLED_APPS += MY_APPS
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -126,4 +132,13 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
         'TIMEOUT': 60 * 60 * 24
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework_xml.renderers.XMLRenderer',
+        'rest_framework_yaml.renderers.YAMLRenderer',
+        'message.renderer.PlainTextRenderer'
+    ]
 }
